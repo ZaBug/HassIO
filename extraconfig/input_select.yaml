@@ -1,0 +1,18 @@
+  bza:
+    name: Bza
+    options:
+      - Home
+      - Just Arrived
+      - Just Left
+      - Away
+      - Extended Away
+    initial: Away
+  sonya:
+    name: Sonya
+    options:
+      - Home
+      - Just Arrived
+      - Just Left
+      - Away
+      - Extended Away
+    initial: Away
