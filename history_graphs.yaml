@@ -1,0 +1,6 @@
+power:
+  name: Power Graph
+  entities:
+  - sensor.podl_ight_power_sensor
+  hours_to_show: 96
+  refresh: 120

@@ -1,0 +1,8 @@
+sensor.bza_status:
+  entity_picture: /local/Bza.jpg
+sensor.sonya_status:
+  entity_picture: /local/Sonya.jpg
+person.bza:
+  entity_picture: /local/Bza.jpg
+person.sonya:
+  entity_picture: /local/Sonya.jpg
