@@ -1,1 +1,20 @@
-[]
+# Irrigation circuit 1 turn off after 30 minutes
+- trigger:
+  - platform: state
+    entity_id: switch.sonoff_4ch_relay_1
+    to: 'on'
+    for:
+      minutes: 30
+  action:
+  - service: switch.turn_off
+    entity_id: switch.sonoff_4ch_relay_1
+# Irrigation circuit 2 turn off after 10 minutes
+- trigger:
+  - platform: state
+    entity_id: switch.sonoff_4ch_relay_2
+    to: 'on'
+    for:
+      minutes: 10
+  action:
+  - service: switch.turn_off
+    entity_id: switch.sonoff_4ch_relay_2
