@@ -1,0 +1,92 @@
+esphome:
+  name: esp_device_tracker
+  platform: ESP32
+  board: nodemcu-32s
+
+wifi:
+  ssid: "IOT_IoT"
+  password: !secret iot_iot_pass
+  
+  # Set this to the IP of the ESP
+  manual_ip:
+    static_ip: 192.168.50.102
+    gateway: 192.168.50.1
+    subnet: 255.255.255.0
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp Device Tracker"
+    password: "t7LwXuMUHjQY"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Web server
+#web_server:
+  #port: 80
+
+# Enable Home Assistant API
+api:
+  password: !secret api_esp32
+
+ota:
+  password: !secret ota_esp32
+
+# Example configuration entry for finding MAC addresses
+esp32_ble_tracker:
+switch:
+  - platform: restart
+    name: "ESP32_Restart"
+
+binary_sensor:
+  - platform: ble_presence
+    mac_address: 70:77:81:8A:A5:FE
+    name: "ESP32 BLE Tracker Google Sony TV"
+  - platform: ble_presence
+    mac_address: EA:0A:C0:77:C4:3B
+    name: "iBeacon_Bza"
+  - platform: ble_presence
+    mac_address: FF:C4:5E:02:75:89
+    name: "iBeacon_Sonya"
+  - platform: ble_presence
+    mac_address: F7:9B:25:03:F8:B8
+    name: "iBeacon_Guest"
+
+sensor:
+  - platform: wifi_signal
+    name: "WiFi Signal Sensor"
+    update_interval: 60s
+  - platform: xiaomi_lywsdcgq
+    mac_address: 4C:65:A8:DA:D8:9E
+    temperature:
+      name: "Xiaomi_Temperature_LivingRoom"
+    humidity:
+      name: "Xiaomi_Humidity_LivingRoom"
+    battery_level:
+      name: "Xiaomi_MiJia_Battery_Level_LivingRoom"
+  - platform: xiaomi_lywsdcgq
+    mac_address: 4C:65:A8:DA:D5:FB
+    temperature:
+      name: "Xiaomi_Temperature_Office"
+    humidity:
+      name: "Xiaomi_Humidity_Office"
+    battery_level:
+      name: "Xiaomi_MiJia_Battery_Level_Office"
+  - platform: xiaomi_lywsdcgq
+    mac_address: 4C:65:A8:DA:DF:7A
+    temperature:
+      name: "Xiaomi_Temperature_Bedroom"
+    humidity:
+      name: "Xiaomi_Humidity_Bedroom"
+    battery_level:
+      name: "Xiaomi_MiJia_Battery_Level_Bedroom"
+  - platform: xiaomi_lywsdcgq
+    mac_address: 4C:65:A8:DA:DE:A7
+    temperature:
+      name: "Xiaomi_Temperature_Pod"
+    humidity:
+      name: "Xiaomi_Humidity_Pod"
+    battery_level:
+      name: "Xiaomi_MiJia_Battery_Level_Pod"

@@ -1,0 +1,25 @@
+esphome:
+  name: sonoff_4ch_pro
+  platform: ESP8266
+  board: esp01_1m
+
+wifi:
+  ssid: "IOT_IoT"
+  password: "7516341224bza"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Sonoff 4Ch Pro Fallback Hotspot"
+    password: "EbTJDcHLS313"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: "7516341224bza"
+
+ota:
+  password: "7516341224bza"

@@ -1,12 +1,15 @@
-# Example .gitignore file for your config dir.
+# Gitignore settings for Homme Assitant
 # An * ensures that everything will be ignored.
 *
 
-# You can whitelist files/folders with !, these will not be ignored.
+# Whitelist files/folders with !, these will not be ignored.
 !*.yaml
 !.gitignore
 !*.md
 !extraconfig
+!esphome
+!node-red
+!node-red/*.*
 
 # Ignore folders.
 .storage

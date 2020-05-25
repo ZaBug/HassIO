@@ -1,0 +1,23 @@
+esphome:
+  name: power_plug_with_2usb
+  platform: ESP8266
+  board: esp8285
+
+# WiFi connection
+wifi:
+  ssid: "IOT_IoT"
+  password: !secret iot_iot_pass
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret iot_iot_pass
+
+ota:
+  password: !secret iot_iot_pass
+
+# Enable Web server
+web_server:
+  port: 80
