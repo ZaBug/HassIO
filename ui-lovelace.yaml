@@ -1,0 +1,188 @@
+title: Home
+views:
+  - badges:
+      - entity: sensor.bza_status
+      - entity: sensor.sonya_status
+      - entity: sun.sun
+      - entity: sensor.yr_symbol
+      - entity: person.bza
+      - entity: person.sonya
+      - entity: binary_sensor.switch_158d0002842baa
+    cards:
+      - entities:
+          - entity: sensor.date_time
+        type: entities
+      - entity: weather.zahome
+        type: weather-forecast
+      - entities:
+          - entity: binary_sensor.ibeacon_bza
+          - entity: binary_sensor.ibeacon_sonya
+          - entity: binary_sensor.ibeacon_guest
+          - entity: input_select.bza
+          - entity: input_select.sonya
+        type: entities
+      - entities:
+          - entity: switch.sonoff_4ch_relay_1
+          - entity: switch.sonoff_4ch_relay_2
+          - entity: switch.sonoff_4ch_relay_4
+          - entity: binary_sensor.sonoff_4ch_status
+        show_header_toggle: false
+        type: entities
+      - entities:
+          - entity: sensor.xiaomi_temperature_livingroom
+          - entity: sensor.xiaomi_humidity_livingroom
+          - entity: sensor.xiaomi_mijia_battery_level_livingroom
+        show_header_toggle: false
+        theme: Backend-selected
+        title: Living
+        type: entities
+      - entities:
+          - entity: sensor.xiaomi_temperature_office
+          - entity: sensor.xiaomi_humidity_office
+          - entity: sensor.xiaomi_mijia_battery_level_office
+        show_header_toggle: false
+        title: Birou
+        type: entities
+      - entities:
+          - entity: sensor.xiaomi_temperature_bedroom
+          - entity: sensor.xiaomi_humidity_bedroom
+          - entity: sensor.xiaomi_mijia_battery_level_bedroom
+        show_header_toggle: false
+        title: Dormitor
+        type: entities
+      - entities:
+          - entity: sensor.xiaomi_temperature_pod
+          - entity: sensor.xiaomi_humidity_pod
+          - entity: sensor.xiaomi_mijia_battery_level_pod
+        show_header_toggle: false
+        title: Pod
+        type: entities
+      - entity: sensor.illumination_7c49ebad6e56
+        graph: line
+        name: Senzor de lumina
+        type: sensor
+      - entity: light.gateway_light_7c49ebad6e56
+        name: Gateway Light
+        theme: Backend-selected
+        type: light
+      - entity: sensor.wifi_signal_sensor
+        max: -30
+        min: -90
+        name: ESP32 Wifi
+        severity:
+          green: -50
+          red: -70
+          yellow: -60
+        theme: default
+        type: gauge
+      - entities:
+          - entity: switch.plug_158d00027a8e73
+          - entity: binary_sensor.water_leak_sensor_158d00023a6a1d
+        title: Switch
+        type: entities
+      - entities:
+          - entity: binary_sensor.motion_sensor_158d0002280d44
+          - entity: binary_sensor.motion_sensor_158d000290ec72
+        type: entities
+      - entity: sensor.podl_ight_power_sensor
+        icon: 'mdi:power-plug'
+        name: Pod Light
+        type: sensor
+      - entities:
+          - entity: binary_sensor.power_button
+          - entity: binary_sensor.status
+          - entity: switch.tuya_smart_plug
+          - entity: sensor.tuya_smart_plug_voltage
+          - entity: sensor.tuya_smart_plug_wattage
+          - entity: sensor.tuya_smart_plug_current
+          - entity: switch.tuya_red_led
+          - entity: switch.tuya_blue_led
+        type: entities
+      - entities:
+          - entity: sensor.romania_coronavirus_confirmed
+          - entity: sensor.romania_coronavirus_current
+          - entity: sensor.romania_coronavirus_deaths
+          - entity: sensor.romania_coronavirus_recovered
+        type: entities
+      - dark_mode: false
+        entities:
+          - device_tracker.mi_9t_pro
+          - device_tracker.sm_g950f
+        type: map
+    icon: 'mdi:view-dashboard-variant'
+    panel: false
+    path: default_view
+    title: Dashboard
+  - badges: []
+    cards:
+      - aspect_ratio: 0%
+        camera_image: camera.camera1
+        camera_view: live
+        entity: camera.camera1
+        show_name: false
+        show_state: false
+        type: picture-entity
+      - aspect_ratio: 0%
+        camera_image: camera.camera2
+        camera_view: live
+        entity: camera.camera2
+        show_name: false
+        show_state: false
+        type: picture-entity
+      - aspect_ratio: 0%
+        camera_image: camera.camera3
+        camera_view: live
+        entity: camera.camera3
+        show_name: false
+        show_state: false
+        type: picture-entity
+      - aspect_ratio: 0%
+        camera_image: camera.camera4
+        camera_view: live
+        entity: camera.camera4
+        show_name: false
+        show_state: false
+        type: picture-entity
+    icon: 'mdi:cctv'
+    panel: false
+    title: Cameras
+  - badges: []
+    cards:
+      - entity: sensor.xiaomi_temperature_livingroom
+        graph: line
+        name: Living Temperatura
+        type: sensor
+      - entity: sensor.xiaomi_humidity_livingroom
+        graph: line
+        name: Living Umiditate
+        type: sensor
+      - entity: sensor.xiaomi_temperature_office
+        graph: line
+        name: Birou Temperatura
+        type: sensor
+      - entity: sensor.xiaomi_humidity_office
+        graph: line
+        name: Birou Umiditate
+        type: sensor
+      - entity: sensor.xiaomi_temperature_bedroom
+        graph: line
+        name: Dormitor Temperatura
+        type: sensor
+      - entity: sensor.xiaomi_humidity_bedroom
+        graph: line
+        name: Dormitor Umiditate
+        type: sensor
+      - entity: sensor.xiaomi_temperature_pod
+        graph: line
+        name: Pod Temperatura
+        type: sensor
+      - entity: sensor.xiaomi_humidity_pod
+        graph: line
+        name: Pod Umiditate
+        type: sensor
+      - entities:
+          - entity: switch.esp32_restart
+        type: entities
+      - entity: media_player.kdl_55w756c
+        type: media-control
+    title: Sensors

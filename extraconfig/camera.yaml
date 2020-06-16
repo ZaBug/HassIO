@@ -9,7 +9,7 @@
   - platform: generic
     name: Camera2
     still_image_url: !secret DVR_still_image
-    stream_source: !secret DVR_stream_cam2
+    stream_source: !secret DVR_stream_cam4
     username: !secret DVR_user
     password:  !secret DVR_pass
     verify_ssl: false
@@ -25,7 +25,7 @@
   - platform: generic
     name: Camera4
     still_image_url: !secret DVR_still_image
-    stream_source: !secret DVR_stream_cam3
+    stream_source: !secret DVR_stream_cam2
     username: !secret DVR_user
     password:  !secret DVR_pass
     verify_ssl: false
