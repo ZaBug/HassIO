@@ -39,7 +39,7 @@ system_health:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
-  base_url: !secret  https_acces
+  base_url: !secret https_acces
   ssl_certificate: !secret https_ssl_cert
   ssl_key: !secret https_ssl_key
   #ip_ban_enabled: True
@@ -62,5 +62,12 @@ tuya: !include extraconfig/tuya.yaml
 stream:
 camera: !include extraconfig/camera.yaml
 
-lovelace:
-  mode: yaml
+remote:
+  - platform: broadlink
+    host: !secret broadlink_mini3_ip
+    mac: !secret broadlink_mini3_mac
+    type: rm_mini3_redbean
+
+sonoff:
+  username: bza.neo@gmail.com
+  password: 3zyS6Hj9bUo67NR7EkKg

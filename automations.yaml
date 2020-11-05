@@ -4,7 +4,7 @@
     entity_id: switch.sonoff_4ch_relay_1
     to: 'on'
     for:
-      minutes: 30
+      minutes: 60
   action:
   - service: switch.turn_off
     entity_id: switch.sonoff_4ch_relay_1
@@ -14,7 +14,7 @@
     entity_id: switch.sonoff_4ch_relay_2
     to: 'on'
     for:
-      minutes: 10
+      minutes: 20
   action:
   - service: switch.turn_off
     entity_id: switch.sonoff_4ch_relay_2
