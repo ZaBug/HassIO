@@ -12,13 +12,6 @@ homeassistant:
   time_zone: !secret time_zone
   # Customization file
   customize: !include customize.yaml
-  #auth_providers:
-    #- type: trusted_networks
-      #trusted_networks:
-        #- !secret trusted_network1
-        #- !secret trusted_network2
-        #- !secret trusted_network3
-
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
@@ -39,7 +32,8 @@ system_health:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
-  base_url: !secret https_acces
+  #base_url: !secret https_acces
+  server_port: !secret server_port
   ssl_certificate: !secret https_ssl_cert
   ssl_key: !secret https_ssl_key
   #ip_ban_enabled: True
@@ -58,7 +52,6 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 sensor: !include extraconfig/sensor.yaml
 input_select: !include extraconfig/input_select.yaml
-tuya: !include extraconfig/tuya.yaml
 stream:
 camera: !include extraconfig/camera.yaml
 
