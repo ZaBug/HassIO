@@ -53,7 +53,10 @@ binary_sensor:
   - platform: ble_presence
     mac_address: F7:9B:25:03:F8:B8
     name: "iBeacon_Guest"
-
+  - platform: ble_presence
+    mac_address: FD:35:FE:72:4A:38
+    name: "Mi_Smart_Band_5_Sonya"
+    
 sensor:
   - platform: wifi_signal
     name: "WiFi Signal Sensor"
