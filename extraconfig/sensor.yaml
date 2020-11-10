@@ -1,27 +1,25 @@
-  # Weather prediction
-  - platform: yr
-  #- platform: zoneminder
-    #include_archived: false
+#- platform: zoneminder
+#include_archived: false
 
-  - platform: template
-    sensors:
-      bza_status:
-        value_template: '{{ states.input_select.bza.state }}'
-        friendly_name: 'Bza'
-      sonya_status:
-        value_template: '{{ states.input_select.sonya.state }}'
-        friendly_name: 'Sonya'
-  - platform: time_date
-    display_options:
-      - 'time'
-      - 'date'
-      - 'date_time'
-      - 'date_time_iso'
-      - 'time_date'
-      - 'time_utc'
-      - 'beat'
-  - platform: template
-    sensors:
-      podl_ight_power_sensor:
-        value_template: '{{ states.switch.plug_158d00027a8e73.attributes.load_power }}'
-        unit_of_measurement:  W
+- platform: template
+  sensors:
+    bza_status:
+      value_template: "{{ states.input_select.bza.state }}"
+      friendly_name: "Bza"
+    sonya_status:
+      value_template: "{{ states.input_select.sonya.state }}"
+      friendly_name: "Sonya"
+- platform: time_date
+  display_options:
+    - "time"
+    - "date"
+    - "date_time"
+    - "date_time_iso"
+    - "time_date"
+    - "time_utc"
+    - "beat"
+- platform: template
+  sensors:
+    podl_ight_power_sensor:
+      value_template: "{{ states.switch.plug_158d00027a8e73.attributes.load_power }}"
+      unit_of_measurement: W

@@ -1,40 +1,32 @@
-  - platform: generic
-    name: Camera1
-    still_image_url: !secret DVR_still_image
-    stream_source: !secret DVR_stream_cam1
-    username: !secret DVR_user
-    password:  !secret DVR_pass
-    verify_ssl: false
-    authentication: basic
-  - platform: generic
-    name: Camera2
-    still_image_url: !secret DVR_still_image
-    stream_source: !secret DVR_stream_cam4
-    username: !secret DVR_user
-    password:  !secret DVR_pass
-    verify_ssl: false
-    authentication: basic
-  - platform: generic
-    name: Camera3
-    still_image_url: !secret DVR_still_image
-    stream_source: !secret DVR_stream_cam3
-    username: !secret DVR_user
-    password:  !secret DVR_pass
-    verify_ssl: false
-    authentication: basic
-  - platform: generic
-    name: Camera4
-    still_image_url: !secret DVR_still_image
-    stream_source: !secret DVR_stream_cam2
-    username: !secret DVR_user
-    password:  !secret DVR_pass
-    verify_ssl: false
-    authentication: basic
-# OnVif Platform Cameras
-  - platform: onvif
-    host: !secret DVR_host
-    port: !secret DVR_port
-    profile: 1
-    name: DVR
-    username: !secret DVR_user
-    password: !secret DVR_pass
+- platform: generic
+  name: Camera1
+  still_image_url: !secret DVR_still_image
+  stream_source: !secret DVR_stream_cam1
+  username: !secret DVR_user
+  password: !secret DVR_pass
+  verify_ssl: false
+  authentication: basic
+- platform: generic
+  name: Camera2
+  still_image_url: !secret DVR_still_image
+  stream_source: !secret DVR_stream_cam4
+  username: !secret DVR_user
+  password: !secret DVR_pass
+  verify_ssl: false
+  authentication: basic
+- platform: generic
+  name: Camera3
+  still_image_url: !secret DVR_still_image
+  stream_source: !secret DVR_stream_cam3
+  username: !secret DVR_user
+  password: !secret DVR_pass
+  verify_ssl: false
+  authentication: basic
+- platform: generic
+  name: Camera4
+  still_image_url: !secret DVR_still_image
+  stream_source: !secret DVR_stream_cam2
+  username: !secret DVR_user
+  password: !secret DVR_pass
+  verify_ssl: false
+  authentication: basic

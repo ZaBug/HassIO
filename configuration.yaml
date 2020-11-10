@@ -43,9 +43,6 @@ http:
 tts:
   - platform: google_translate
 
-# Xiaomi Aquara Gateway
-xiaomi_aqara: !include extraconfig/xiaomi_gateway.yaml
-
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
