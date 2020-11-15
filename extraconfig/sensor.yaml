@@ -23,3 +23,8 @@
     podl_ight_power_sensor:
       value_template: "{{ states.switch.plug_158d00027a8e73.attributes.load_power }}"
       unit_of_measurement: W
+- platform: template
+  sensors:
+    ups_power_sensor:
+      value_template: "{{ 2200 * states('sensor.ups_load')|float / 100}}"
+      unit_of_measurement: W

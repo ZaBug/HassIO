@@ -32,12 +32,9 @@ system_health:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
-  #base_url: !secret https_acces
   server_port: !secret server_port
   ssl_certificate: !secret https_ssl_cert
   ssl_key: !secret https_ssl_key
-  #ip_ban_enabled: True
-  #login_attempts_threshold: 3
 
 # Text to speech
 tts:
@@ -52,12 +49,21 @@ input_select: !include extraconfig/input_select.yaml
 stream:
 camera: !include extraconfig/camera.yaml
 
-remote:
-  - platform: broadlink
-    host: !secret broadlink_mini3_ip
-    mac: !secret broadlink_mini3_mac
-    type: rm_mini3_redbean
-
 sonoff:
   username: bza.neo@gmail.com
   password: 3zyS6Hj9bUo67NR7EkKg
+
+switch:
+  - platform: broadlink
+    mac: !secret broadlink_mini3_mac
+    switches:
+      - name: Horizon TV
+        command_on: JgBIABkbPBsfGx4cHhsfODsbHzgeGzwbHwALmx4bPBseHB4bHxseODwbHjgfGzwbHgALnB0cOR4cHR0dHhwcOjodHDocHjkeHAANBQAAAAAAAAAAAAAAAAAA=
+        command_off: JgBIABgdHR05HhwdHR0dOTodHTocHTodHQALnhwdHB45HR0dHR0cOjodHTkdHTodHAALnhseHB06HR0dHB4cOjodHDocHjkeHAANBQAAAAAAAAAAAAAAAAAA=
+#device_tracker:
+#- platform: snmp
+#host: 192.168.24.1
+#community: public
+#baseoid: 1.3.6.1.2.1.4.22.1.2
+#interval_seconds: 30
+#consider_home: 120

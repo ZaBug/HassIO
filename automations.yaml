@@ -1,20 +1,37 @@
 # Irrigation circuit 1 turn off after 30 minutes
-- trigger:
-  - platform: state
-    entity_id: switch.sonoff_4ch_relay_1
-    to: 'on'
-    for:
-      minutes: 60
+- alias: "Irrigation circuit 1 turn off after 60 minutes of On state"
+  trigger:
+    - platform: state
+      entity_id: switch.sonoff_4ch_relay_1
+      to: "on"
+      for:
+        minutes: 60
   action:
-  - service: switch.turn_off
-    entity_id: switch.sonoff_4ch_relay_1
+    - service: switch.turn_off
+      entity_id: switch.sonoff_4ch_relay_1
 # Irrigation circuit 2 turn off after 10 minutes
-- trigger:
-  - platform: state
-    entity_id: switch.sonoff_4ch_relay_2
-    to: 'on'
-    for:
-      minutes: 20
+- alias: "Irrigation circuit 2 turn off after 20 minutes of On state"
+  trigger:
+    - platform: state
+      entity_id: switch.sonoff_4ch_relay_2
+      to: "on"
+      for:
+        minutes: 20
   action:
-  - service: switch.turn_off
-    entity_id: switch.sonoff_4ch_relay_2
+    - service: switch.turn_off
+      entity_id: switch.sonoff_4ch_relay_2
+
+- alias: "Power Off"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.ups_input_voltage
+    below: 1
+  action:
+    service: notify.mobile_app_mi_9t_pro
+    data:
+      message: "Power is off in the desk."
+      title: "Power is Off."
+      data:
+        ttl: 0
+        priority: high
+        channel: alarm_stream

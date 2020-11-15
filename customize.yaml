@@ -6,3 +6,6 @@ person.bza:
   entity_picture: /local/Bza.jpg
 person.sonya:
   entity_picture: /local/Sonya.jpg
+sensor.ups_power_sensor:
+  icon: mdi:sigma
+  friendly_name: Ups Power Usage
