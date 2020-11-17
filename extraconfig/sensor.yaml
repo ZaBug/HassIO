@@ -28,3 +28,15 @@
     ups_power_sensor:
       value_template: "{{ 2200 * states('sensor.ups_load')|float / 100}}"
       unit_of_measurement: W
+- platform: template
+  sensors:
+    daily_power_server_ups:
+      friendly_name: Server ups daily metter
+      value_template: "{{ states('daily_energy_server_ups')|float }}"
+      unit_of_measurement: kWh
+- platform: template
+  sensors:
+    monthly_power_server_ups:
+      friendly_name: Server ups monthly metter
+      value_template: "{{ states('monthly_energy_server_ups')|float }}"
+      unit_of_measurement: kWh
